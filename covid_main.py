@@ -7,7 +7,6 @@ Created on Sat Jul 22 14:49:10 2023
 
 # PRELIMINARIES
 import pandas as pd;
-import matplotlib.pyplot as plt;
 
 # DATA EXTRACTION
 # For backend use: retrieval of CSV data files per specified folder,
