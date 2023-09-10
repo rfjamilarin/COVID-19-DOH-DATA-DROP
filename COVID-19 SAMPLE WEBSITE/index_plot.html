@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID 19 DATA DROP</title>
+  <link rel="stylesheet" href="style_plot.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">COVID 19 DATA DROP</a>
+    <nav class="nav-items">
+      <a href=index_main.html>Home</a>
+    </nav>
+  </header>
+  <main>
+    <div class="head">
+     <h1>CLEANING COVID-19 DOH DATA</h1>
+    </div>
+    <div class="plot">
+      <div class="plt">
+        <p class="plt-heading">Inconsistent data</p>
+        <p class="plt-text">In this project, data records with inconsistent values are omitted from the data drop. Similar to how clinical database systems flag inconsistent data, this project uses query to identify inconsistent data. Queries are conditions that signify conflict between values entered between two or more data features. Here, 6 queries are identified, which are the following:<br/>
+<br/>
+Query #1:<br/>
+<span style='margin-left:18px'>HealthStatus = 'RECOVERED' AND RemovalType <> 'RECOVERED' OR</span><br/>
+<span style='margin-left:18px'>HealthStatus = 'DIED' AND RemovalType <> 'DIED'</span><br/>
+Query #2:<br/>
+<span style='margin-left:18px'>DateSpecimen > DateResultRelease OR</span><br/>
+<span style='margin-left:18px'>DateResultRelease > DateRepConf</span><br/>
+Query #3:<br/>
+<span style='margin-left:18px'>Sex <> 'MALE' AND PregnantTab IS NULL OR</span><br/>
+<span style='margin-left:18px'>Sex = 'MALE' AND PregnantTab IS NOT NULL</span><br/>
+Query #4:<br/>
+<span style='margin-left:18px'>Age is not within AgeGroup e.g. AGE = 17 AND AgeGroup <> '15 to 19'</span><br/>
+Query #5:<br/><span style='margin-left:20px'>HealthStatus = 'DIED' AND DateDied IS NULL</span><br/>
+Query #6:<br/><span style='margin-left:20px'>HealthStatus = 'RECOVERED' AND DateRecover IS NULL</span><br/><br/>
+In Figure 1, it shows that almost 2/3 of the data records trigger Query #6. This shows how data cleaning is necessary before treating data for analysis. With Query #6, it is possible that the recovery rates calculated will not reflect with quality data and cause effects especially with policy making.</p>
+      </div> 
+      <div class="plt">
+        <img src="plot1.png">
+        <p class="plt-text">Figure 1. Cleaning of data by eliminating data records triggering queries.</p>
+      </div>
+    </div>
+    <div class="plot">
+      <div class="plt">
+        <p class="plt-heading">Missing data</p>
+        <p class="plt-text">The data drop also consists of features related to the residence of the COVID 19 suspects or patients. These features are Region, Province, City, and Barangay. Unfortunately, the data drop contain data records with incomplete residence information, which tracking and tracing COVID19 become more difficult. To show the general scope, Figure 2 shows the number of data records with no, one, two, three, or all four missing residence information.
+<br/><br/>
+Majority of these data records miss one data, often the Barangay information, while roughly 4% of the total number of data records have complete residence information. These missing information are usually identified in the ValidationStatus of the data drop, but nevertheless, this shows that the data drop may not be ready for quality geographic analysis of COVID 19 data.</p>
+      </div> 
+      <div class="plt">
+        <img src="plot2.png">
+        <p class="plt-text">Figure 2. Number of data records with missing zero to all four residence data are graphed, showing that most data records miss one residence information.</p>
+      </div>
+    </div>
+    <div class="plot">
+      <div class="plt">
+        <p class="plt-heading">Effect</p>
+        <p class="plt-text">Given these data cleaning processes, it is natural that the number of data records are reduced. This may affect constants calculated to determine the epidicity of COVID-19. Looking at Figure 3, it is seen how the growth of the confirmed cases changes between raw data and quality data. This implies that quality data is a must especially on data analysis that are senstive in dates.</p>
+      </div> 
+      <div class="plt">
+        <img src="plot3.png">
+        <p class="plt-text">Figure 3. Sample plot of number of total confirmed cases per day shows the difference between unclean and clean data.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="copy">© 2023 Developer</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Contact Links</span>
+        <a href="#"><a href="https://www.facebook.com/rfjamilarin/"><i class="fab fa-facebook"></i></a>
+        <a href="#"><a href="https://www.linkedin.com/in/rfjamilarin/"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><a href="https://github.com/rfjamilarin/"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

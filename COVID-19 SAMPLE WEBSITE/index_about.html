@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style_about.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo"></a>
+    <nav class="nav-items">
+      <a href=index_main.html>Home</a>
+    </nav>
+  </header>
+  <main>
+    <div class="head">
+       <h1>ABOUT COVID-19 DATA DROP</h1>
+    </div>
+    <div class="covid1">
+     <div class = "text">
+      <h1>The COVID-19 DOH DATA DROP</h1>
+      <p>The COVID-19 DOH DATA DROP consists of collected COVID-19 cases in the 	country. Per DOH information, data is extracted from the COVID-19 	Information System by the DOH Epidemiology Bureau every 12 noon daily. The 	data records are compiled into CSV files containing 1 million data 	records.<br/><br/>
+	The CSV file consist of 17 columns. The data fields used in this project 	are the following:<br/><br/>
+	1. Key data - data that aids in identifying cases and must not be 	missing:</p>
+	<ul>
+  	  <li>CaseCode - case code;</li>
+  	  <li>Age - age;</li>
+  	  <li>AgeGroup - age group;</li>
+  	  <li>Sex - sex.</li>
+	</ul>
+	<p>2. Dates & status- date fields and status fields:</p>
+	<ul>
+  	  <li>DateSpecimen - date when specimen was collected;</li>
+  	  <li>DateResultRelease - date of release of result;</li>
+  	  <li>DateRepConf - date publicly announced as confirmed case;</li>
+  	  <li>DateRecover - date recovered;</li>
+  	  <li>RemovalType - type of removal (recovery or death);</li>
+  	  <li>HealthStatus - known current health status of patient (asymptomatic, 	  mild, severe, critical, died, recovered).
+	</ul>
+	<p>3. Address data - data associated to the residence information:</p>
+	<ul>
+  	  <li>RegionRes - region of residence;</li>
+  	  <li>ProvRes - province of residence;</li>
+  	  <li>CityMunRes - city of residence;</li>
+  	  <li>BarangayRes- barangay of residence.</li>
+	</ul>
+    </div>
+    <div class="text1">
+      <img src="plot.jpg">
+      <p class="plt-text">Daily confirmed cases of COVID-19 generated from the data drop, illustrated using Python matplotlib.</p>
+    </div>
+   </div>
+  </main>
+  <footer class="footer">
+    <div class="copy">© 2023 Developer</div>
+    <div class="bottom-links">
+      <div class="links">
+        <span>Contact Links</span>
+        <a href="#"><a href="https://www.facebook.com/rfjamilarin/"><i class="fab fa-facebook"></i></a>
+        <a href="#"><a href="https://www.linkedin.com/in/rfjamilarin/"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><a href="https://github.com/rfjamilarin/"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
